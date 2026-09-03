@@ -2,10 +2,11 @@
   "name": "l200-listing",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm run build:css && npm run build:js && npm run build:html",
+    "build": "npm run build:css && npm run build:js && npm run build:html && npm run build:img",
     "build:css": "tailwindcss -i src/index.css -o dist/css/index.css --minify",
     "build:js": "esbuild src/index.js --bundle --minify --outfile=dist/js/index.js",
     "build:html": "mkdir -p dist && cp index.html dist/index.html",
+    "build:img": "mkdir -p dist && cp -r src/img dist/img",
     "watch:css": "tailwindcss -i src/index.css -o dist/css/index.css --watch",
     "watch:js": "esbuild src/index.js --bundle --outfile=dist/js/index.js --watch",
     "dev": "npm run watch:css & npm run watch:js"
